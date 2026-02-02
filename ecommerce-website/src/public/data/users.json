@@ -1,0 +1,19 @@
+[
+
+{
+    "Id":1,
+    "Username":"Lena Beqai",
+    "Email":"lena@gmail.com",
+    "Password":"111",
+    "Role":"Customer"
+},
+
+{
+    "Id":2,
+    "Username":"Test User",
+    "Email":"testuser@gmail.com",
+    "Password":"111",
+    "Role":"Customer"
+}
+
+]

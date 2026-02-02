@@ -8,6 +8,7 @@ exports.createProduct = async (req, res) => {
   const { productName, Description, Price,Stock, CategoryID } = req.body;
 
   const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+
   //const productImages = req.files.map(file => file.filename);
 
 
@@ -58,6 +59,14 @@ INNER JOIN
     Categories
 ON 
     Products.CategoryID = Categories.CategoryID;`);
+
+    result.recordset.forEach(element => {
+
+      if (element.ImagePath != null){
+      element.ImagePath = "http://localhost:5000"+element.ImagePath
+      }
+    });
+
         res.json(result.recordset);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -81,6 +90,11 @@ exports.getProductById = async (req, res) => {
     if (result.recordset.length === 0) {
       return res.status(404).json({ message: 'Product not found' });
     }
+
+      
+      result.recordset[0].ImagePath = "http://localhost:5000"+result.recordset[0].ImagePath
+      
+      
 
     res.status(200).json(result.recordset[0]);
   } catch (error) {
@@ -160,3 +174,41 @@ exports.editProduct = async (req, res) => {
   };
   
   
+// Get Product by categoryID
+exports.getProductBycategoryId = async (req, res) => {
+
+  const categoryId = req.params.id;
+
+ try {
+        const pool = await sql.connect(dbConfig);
+        const result = await pool.request()
+        .input('CategoryID', sql.Int, categoryId)
+        
+        .query(`SELECT 
+    Products.ProductID,
+    Products.Price,
+    Products.Stock,
+    Products.Description,
+    Products.ImagePath,
+    Products.Name as productName,
+    Categories.Name as categoryName,
+    Categories.CategoryID
+FROM 
+    Products
+INNER JOIN 
+    Categories
+ON 
+    Products.CategoryID = Categories.CategoryID where Products.CategoryID = @CategoryID`);
+
+    result.recordset.forEach(element => {
+
+      if (element.ImagePath != null){
+      element.ImagePath = "http://localhost:5000"+element.ImagePath
+      }
+    });
+
+        res.json(result.recordset);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};

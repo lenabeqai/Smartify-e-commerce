@@ -1,0 +1,17 @@
+
+<!-- Product Grid -->
+
+      <div class="img-wrapper">
+        <img [src]="product.ImagePath" [alt]="product.productName" />
+      </div>
+      <div class="product-info">
+        <h3>{{ product.productName }}</h3>
+        <p class="price">{{ product.Price | currency: 'USD' }}</p>
+        <div class="ActionsDiv">
+        <button class="btn-add" (click)="AddToCart()">Add to Cart</button>
+        <button class="btn-add" [routerLink]="['/product', product.ProductID]">More Info</button>
+     
+        </div>
+      </div>
+   
+  

@@ -1,0 +1,14 @@
+[
+    {
+        "CategoryID": 1,
+        "Name": "Smart Phones"
+    },
+    {
+        "CategoryID": 2,
+        "Name": "Phone Cases"
+    },
+    {
+        "CategoryID": 3,
+        "Name": "Smart Watches"
+    }
+]
