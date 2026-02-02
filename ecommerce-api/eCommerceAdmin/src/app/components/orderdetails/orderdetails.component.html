@@ -1,0 +1,46 @@
+
+<app-header title="Order Details"/>
+<div >
+ 
+<div class="container">
+
+  <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="font-size: 15px;color: rgb(99, 98, 98); font-weight: 500;" for="User" >Ordered By:</label>
+        <p style="font-size: 15px;color: rgb(99, 98, 98);">{{orderUser}}</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="font-size: 15px;color:rgb(99, 98, 98); font-weight: 500;" for="Total Amount" >Total Amount:</label>
+        <p style="font-size: 15px;color: rgb(99, 98, 98);">{{totalamount | currency}}</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="font-size: 15px;color: rgb(99, 98, 98); font-weight: 500;" for="OrderDate" >Order Date:</label>
+        <p style="font-size: 15px;color: rgb(99, 98, 98);">{{orderDate | date:'fullDate'}}</p>
+    </div>
+</div> 
+
+<div style="margin-top: 40px;">
+<h6>Order Items</h6>
+
+<table id="OrderItems">
+    <thead>
+      <tr>
+        <!--<th>ID</th>-->
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orderitems">
+        <td>{{ item.productName }}</td>
+        <td>{{ item.Quantity }}</td>
+        <td>{{ item.Price | currency  }}</td>
+     </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>

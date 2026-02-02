@@ -1,0 +1,29 @@
+@if(viewmenu)
+{
+<nav class="sidebar">
+  <!--<img style="width: 100px; height: 100px; margin-bottom: 30px;" src="https://images-platform.99static.com//Q-UcmVmVg1InMFabGJnoweyvJPw=/79x1084:1248x2254/fit-in/500x500/99designs-contests-attachments/70/70080/attachment_70080899"/>-->
+
+  <h3>PhoneShop</h3>
+  <ul>
+    <li [class.active]="isActive('/dashboard')">
+      <a routerLink="/dashboard"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+    </li>
+    <li [class.active]="isActive('/users')">
+      <a routerLink="/users"><i class="fas fa-users"></i>Users</a>
+    </li>
+    <li [class.active]="isActive('/products')">
+      <a routerLink="/products"><i class="fa-brands fa-product-hunt"></i>Products</a>
+    </li>
+    <li [class.active]="isActive('/categories')">
+      <a routerLink="/categories"><i class="fa-solid fa-layer-group"></i>Categories</a>
+    </li>
+    <li [class.active]="isActive('/orders')">
+      <a routerLink="/orders"><i class="fa-solid fa-code-pull-request"></i>Orders</a>
+    </li>
+  </ul>
+ 
+    <button class="logoutbtn" (click)="Logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+
+</nav>
+}
+

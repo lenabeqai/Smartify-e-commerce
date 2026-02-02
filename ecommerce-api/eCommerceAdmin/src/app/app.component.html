@@ -1,0 +1,15 @@
+
+@if(showSidebar)
+{
+<app-sidebar/>
+<div class = "content">
+    <router-outlet/>
+    </div>
+}
+
+@else
+{
+<div>
+<router-outlet/>
+</div>
+}

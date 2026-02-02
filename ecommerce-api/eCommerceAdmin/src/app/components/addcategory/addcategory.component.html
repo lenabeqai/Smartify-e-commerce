@@ -1,0 +1,25 @@
+
+<dialog open>
+    <div class="flexdev">
+      <h6>{{title}}</h6>
+      <i class="fa-solid fa-xmark" (click)="onCancel()"></i>
+    </div>
+    <form>
+      <!-- Category Name -->
+      <div>
+        <label for="Name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="category.Name" required />
+        <!--<div *ngIf="registrationForm.submitted && !registrationForm.form.controls.username?.valid">
+            <small style="color: red;">Username is required.</small>
+          </div>-->
+      </div>
+  
+    
+      <!-- Submit Button -->
+    </form>
+  
+    <div class="flexdev">
+      <button class="registerbtn" type="button" (click)="onSubmit()">{{btncaption}}</button>
+      <button class="cancelbtn" type="button" (click)="onCancel()">cancel</button>
+    </div>
+  </dialog>

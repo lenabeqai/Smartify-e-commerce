@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "animate.css/animate.min.css";
+
+
+:root {
+  --color-primary: #8b79a3;
+  --color-primary-hover: #7a6992;
+  --color-accent: #c4b5d6;
+  --color-bg: #f8f8fa;
+  --color-surface: #ffffff;
+  --color-text: #000000a6;
+  --color-text-secondary: #555555;
+  --color-success: #4caf50;
+  --color-error: #e74c3c;
+    --mdc-theme-primary:var(--color-primary);
+}
+
+
+
+
+html, body { height: 100%; background-color: #f8f8f9; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+     padding-top: 70px;
+      color: var(--color-text);
+    }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

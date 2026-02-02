@@ -1,0 +1,39 @@
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f8f8fb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: left;
+  color: #8b79a3;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 25px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.switch-mode {
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+}
+
+mat-card {
+  border: 1px solid #eee;
+}

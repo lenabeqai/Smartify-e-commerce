@@ -18,7 +18,7 @@ async function initializeDatabase() {
     console.log('Connecting to SQL Server...');
     const pool = await sql.connect(dbConfig);
 
-    const dbName = 'EcommerceDB_New';
+    const dbName = 'SmartifyDB';
     console.log(`Creating database '${dbName}'...`);
     await pool.request().query(`IF DB_ID('${dbName}') IS NULL CREATE DATABASE ${dbName}`);
     console.log(`Database '${dbName}' created or already exists.`);

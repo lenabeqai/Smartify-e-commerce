@@ -1,0 +1,151 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top transition">
+  <div class="container-fluid">
+    
+     <div class="d-flex flex-column align-items-center">
+          <img src="logo2.png" height="40" width="30" alt="Smartify">
+          <a class="navbar-brand fw-bold logoname" routerLink="/">Smartify</a>
+          
+     </div>
+
+    <!-- Toggler for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<!-- Toggler for mobile -->
+
+    <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 " >
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']"    routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+
+        <div *ngFor="let category of categories">
+
+           <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/category', category.CategoryID,category.Name]" routerLinkActive="active">{{category.Name}}</a>
+        </li>
+        </div>
+       <!--<li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Phones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Phone Cases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Watches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Accessories</a>
+        </li>--> 
+      </ul>
+
+      <!-- Right Side (Cart / Account) -->
+       <nav class="navbar navbar-expand-lg navbar-light bg-white px-4">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    
+    <!-- Right-side nav -->
+    <div class="d-flex align-items-center gap-3">
+
+      <!-- Cart Icon -->
+      <div class="position-relative" style="cursor:pointer;" (click)="goToCart()" >
+         <mat-icon class="text-secondary">shopping_cart</mat-icon>
+        <span *ngIf="cartCount > 0"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{ cartCount }}
+        </span>
+      </div>
+
+      <!-- User Dropdown -->
+      <div class="dropdown" *ngIf="user">
+        <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-secondary" href="#" role="button" 
+           id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle fs-4 me-2"></i>
+          <span>{{ user?.user.Username }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+          <!--<li>
+            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/profile">
+              <i class="bi bi-person"></i> Profile
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/orders">
+              <i class="bi bi-receipt"></i> Orders
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" routerLink="/wishlist">
+              <i class="bi bi-heart"></i> Wishlist
+            </a>
+          </li>
+          <li><hr class="dropdown-divider"></li>-->
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 text-danger" (click)="logout()">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+     <div *ngIf="!user" style="cursor:pointer;">
+          <button class="btnlogout" routerLink="/login">
+        Login
+      </button>
+     </div>
+
+  </div>
+</nav>
+
+     <!--<ul class="navbar-nav">
+       
+      
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">
+            🛒 Cart <span class="badge bg-secondary">0</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngif="!user">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+
+          <li class="nav-item">
+          <p>{{user?.user.Username}}</p>
+        </li>
+       
+      </ul>-->
+      
+    </div>
+  </div>
+
+
+</nav>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div
+    class="toast align-items-center text-bg-success border-0"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    #cartToast
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        Item added to cart!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

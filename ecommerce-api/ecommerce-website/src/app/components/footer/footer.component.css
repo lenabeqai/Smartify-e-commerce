@@ -1,0 +1,6 @@
+.logoname{
+    background: linear-gradient(to right, #C7C5F4, #776BCC,#504ba8, #cf23cf); 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    font-size: 30px;
+}

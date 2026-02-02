@@ -1,0 +1,211 @@
+.toast-top-right {
+    top: 12px;
+    right: 12px;
+  }
+  
+  .utitledev{
+      background-color: white;
+      padding: 10px;
+  }
+  
+  .utabledev{
+      background-color: white;
+      padding: 20px;
+     margin: 0px 20px;
+     border-radius: 10px;
+  }
+  
+  #categories {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #categories td {
+      padding: 15px;
+      font-size: 12px;
+      color:rgb(99, 98, 98);
+    }
+    
+    #categories th {
+      padding: 15px;
+    }
+  
+    #categories tr{
+      border-bottom: 1px solid #f2f2f2;
+    }
+    
+  
+    #categories tr:hover {background-color: #ddd;}
+    
+    #categories thead {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: white;
+      color:rgb(99, 98, 98);
+      font-size: 15px;
+      border-top: 1px solid #f2f2f2;
+      padding: 8px;
+    }
+  
+    .Actions{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .centerth{
+      text-align: center;
+    }
+  
+    .iconbtn:hover{
+      
+      border-radius: 50px;
+      background-color: white;
+     
+    }
+  
+    .iconbtn{
+      border: none;
+      background-color: transparent;
+      width: 25px;
+      height: 25px;
+    }
+    .header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      align-items: baseline;
+  }
+    
+  
+    .addbtn{
+      background-color:#8b79a3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      max-height: 35px;
+      padding: 7px 30px;
+      font-size: 15px;    
+    }
+    
+   i{
+    color:rgb(99, 98, 98);
+   }
+    
+   h3{
+    font-size: 15px;
+    color: rgb(99, 98, 98);
+   }
+  
+   h2{
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+   }
+  
+   .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  
+   }
+  
+   .paginatebtn{
+     color: rgb(71, 69, 69);
+     border: none;
+     background-color: transparent;
+     
+   }
+  
+   .paginatebtn.active
+   {
+    color: #8b79a3;
+    border-radius: 5px;
+    background-color: whitesmoke;
+   }
+  
+   .nextbtn{
+    border:none;
+    color: rgb(71, 69, 69);
+    background-color: transparent;
+   }
+  
+   .lastbtn{
+    border:none;
+    color: rgb(71, 69, 69);
+    background-color: transparent;
+  }
+  
+   .prevbtn{
+    border:none;
+    color: rgb(71, 69, 69);
+    background-color: transparent;
+   }
+  
+   .firstbtn{
+    border:none;
+    color: rgb(71, 69, 69);
+    background-color: transparent;
+   }
+  
+   .firstbtn:disabled{
+    border:none;
+    color: rgb(124, 123, 123);
+   }
+  
+   .prevbtn:disabled{
+    border:none;
+    color: rgb(124, 123, 123);
+   }
+  
+   .nextbtn:disabled{
+    border:none;
+    color: rgb(124, 123, 123);
+   }
+  
+   
+   .lastbtn:disabled{
+    border:none;
+    color: rgb(124, 123, 123);
+   }
+  
+   
+  
+   dialog{
+  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border:none;
+    
+   }
+  
+   .canclbtn{
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    max-height: 30px;
+    padding: 5px 10px;
+    font-size: 14px;
+   }
+  
+   .confirmbtn{
+    background-color:#8b79a3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    max-height: 30px;
+    padding: 5px 10px;
+    font-size: 14px;
+   }
+  
+
+  
+  
+  
+  
+  
+ 

@@ -1,0 +1,92 @@
+
+  
+
+<dialog open>
+  <div class="flexdev">
+    <h6 style=" font-size: 15px;">{{title}}</h6>
+  <i class="fa-solid fa-xmark" (click)="onCancel()"></i>
+</div>
+<form>
+    <!-- Username -->
+    <div>
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+       [(ngModel)]="user.Username"
+        required
+      />
+      <!--<div *ngIf="registrationForm.submitted && !registrationForm.form.controls.username?.valid">
+        <small style="color: red;">Username is required.</small>
+      </div>-->
+    </div>
+  
+    <!-- Email -->
+    <div>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="user.Email"
+        required
+      />
+      <!--<div *ngIf="registrationForm.submitted && !registrationForm.form.controls.email?.valid">
+        <small style="color: red;">A valid email is required.</small>
+      </div>-->
+    </div>
+  
+    <label for="role">Role</label>
+    <select
+      id="role"
+      class="form-select"
+      [(ngModel)]="user.Role"
+      name="role"
+      required
+    >
+      <option value="" disabled selected>Select a Role</option>
+      <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select>
+   <!-- <div *ngIf="roleForm.submitted && !selectedRole" class="text-danger">
+      Role is required.
+    </div>-->
+    
+    
+    @if(isNew)
+    {
+    <!-- Password -->
+    <div>
+    
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="user.Password"
+        required
+        minlength="6"
+      />
+
+    </div>
+  }
+  <!--role-->
+    <!--<div>
+      <label for="role">Role</label>
+      <input
+        type="text"
+        id="role"
+        name="role"
+        [(ngModel)]="user.Role"
+        required
+      />
+    </div>-->
+  
+    <!-- Submit Button -->
+</form>
+
+<div class="flexdev">
+<button class="registerbtn" type="button" (click)="onSubmit()">{{btncaption}}</button>
+<button  class="cancelbtn" type="button" (click)="onCancel()">cancel</button>
+</div>
+</dialog>
