@@ -9,7 +9,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductService {
 
-  private API_URL = '/data/Products.json'//'http://localhost:5000/api/products';
+  private API_URL = 'https://phoneshop-e-commerce-1.onrender.com/api/products'//'/data/Products.json'//'http://localhost:5000/api/products';
 
   constructor(private http:HttpClient) { }
 

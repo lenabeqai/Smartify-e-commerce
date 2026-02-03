@@ -92,7 +92,8 @@ exports.getProductById = async (req, res) => {
     }
 
       
-      result.recordset[0].ImagePath = "http://localhost:5000"+result.recordset[0].ImagePath
+      //result.recordset[0].ImagePath = "http://localhost:5000"+result.recordset[0].ImagePath
+      result.recordset[0].ImagePath = "https://phoneshop-e-commerce-1.onrender.com/"+result.recordset[0].ImagePath
       
       
 
