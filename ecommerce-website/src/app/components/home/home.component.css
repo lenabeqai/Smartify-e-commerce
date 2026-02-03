@@ -29,14 +29,13 @@
      position:relative;
      object-fit: cover;
      left: 10rem;
-     width: 500px;
+     /*width: 500px;*/
      height: 100vh;
   
   }
 
   .imgcontainer{
     background-color: #dcd2e8; /* very soft, almost pastel */
-; 
     width: 33.333%; 
     display: inline-block;
   
@@ -79,4 +78,28 @@
     --mat-icon-color:#dcd2e8;
 }
 
+.posotioncls{
+  position: absolute;
+      transform: translate(-50%, -50%);
+}
 
+@media (max-width: 768px) {
+.imgcontainer{
+    background-color: #dcd2e8; /* very soft, almost pastel */
+    width: 100%;
+    display: inline-block;
+  }
+
+   .carousel-item img{
+     display: block;
+     height: 100%;
+     position:relative;
+     object-fit: cover;
+     left:0;
+  }
+
+  .posotioncls{
+  position: static;
+  transform: none;
+}
+}
