@@ -100,7 +100,7 @@ export class EditproductComponent {
 
             if(this.product.ImagePath != null)
             {
-            this.imagePreview = "http://localhost:5000"+this.product.ImagePath
+            this.imagePreview = this.product.ImagePath
             console.log(this.imagePreview)
             }
       },
