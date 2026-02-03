@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:5000/api/products'; // Node.js API URL
+  private apiUrl = 'https://phoneshop-e-commerce-1.onrender.com/api/products'//'http://localhost:5000/api/products'; // Node.js API URL
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +22,9 @@ export class ProductService {
 
   // Create a product
   createProduct(formData: FormData): Observable<any> {
-    return this.http.post('http://localhost:5000/api/products/create', formData);
+    //return this.http.post('http://localhost:5000/api/products/create', formData);
+    return this.http.post('https://phoneshop-e-commerce-1.onrender.com/api/products/create', formData);
+
   }
 
   // Update a product

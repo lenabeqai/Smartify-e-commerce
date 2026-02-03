@@ -63,7 +63,9 @@ ON
     result.recordset.forEach(element => {
 
       if (element.ImagePath != null){
-      element.ImagePath = "http://localhost:5000"+element.ImagePath
+      //element.ImagePath = "http://localhost:5000"+element.ImagePath
+      element.ImagePath = "https://phoneshop-e-commerce-1.onrender.com"+element.ImagePath
+
       }
     });
 
@@ -93,7 +95,7 @@ exports.getProductById = async (req, res) => {
 
       
       //result.recordset[0].ImagePath = "http://localhost:5000"+result.recordset[0].ImagePath
-      result.recordset[0].ImagePath = "https://phoneshop-e-commerce-1.onrender.com/"+result.recordset[0].ImagePath
+      result.recordset[0].ImagePath = "https://phoneshop-e-commerce-1.onrender.com"+result.recordset[0].ImagePath
       
       
 
@@ -204,7 +206,9 @@ ON
     result.recordset.forEach(element => {
 
       if (element.ImagePath != null){
-      element.ImagePath = "http://localhost:5000"+element.ImagePath
+     // element.ImagePath = "http://localhost:5000"+element.ImagePath
+      element.ImagePath = "https://phoneshop-e-commerce-1.onrender.com"+element.ImagePath
+
       }
     });
 

@@ -11,7 +11,7 @@ import { User } from '../models/user.model';
 })
 export class AuthService {
 
-  private apiUrl = '/data/users.json'//'http://localhost:5000/api/users';
+  private apiUrl = 'https://phoneshop-e-commerce-1.onrender.com/api/users'//'/data/users.json'//'http://localhost:5000/api/users';
 
    private token = signal<string | null>(null);
 
@@ -41,20 +41,20 @@ export class AuthService {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('user', JSON.stringify(u));
     }
-    this.userSubject.next(u); // 🔥 update header instantly
+    this.userSubject.next(u); // update header instantly
   }
 
 
   login(data: { Email: string; Password: string }) {
-    /*return this.http.post<{ token: string }>(`${this.apiUrl}/login`, data).pipe(
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, data).pipe(
       tap((response: any) => {
         localStorage.setItem('token', response.token); // Store token
         localStorage.setItem('user', response.user);
         this.saveUser(response.user)
       })
-    );*/ 
+    ); 
 
-    return this.getUsers().pipe(
+    /*return this.getUsers().pipe(
       map(users => {
         const user = users.find(user => user.Email === data.Email && user.Password === data.Password)
           if (!user) {
@@ -64,7 +64,7 @@ export class AuthService {
         this.userSubject.next(user)
         return user
       })
-    );
+    );*/
   }
 
    saveToken(token: string) {
@@ -92,16 +92,4 @@ export class AuthService {
     this.userSubject.next(null);
    }
 
-
-   
-  signup(newUser: User) {
-    
-    const fakeId = Date.now();
-    const user = { ...newUser, id: fakeId };
-
-    localStorage.setItem('user', JSON.stringify(user));
-    this.userSubject.next(user);
-
-    return user; // simulate API response
-  }
 }

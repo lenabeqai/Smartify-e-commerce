@@ -34,10 +34,10 @@ export class CartService {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
 
-    // ✅ ADD THIS BLOCK HERE (inside constructor)
+
     this.authService.user$.subscribe(user => {
 
-      // 🔴 LOGOUT
+  
       if (!user) {
         this.userId = null;
         this.cartItems = [];
@@ -45,7 +45,7 @@ export class CartService {
         return;
       }
 
-      // 🟢 LOGIN
+
       this.userId = user.user?.UserID || user.UserID;
       if (this.isBrowser) {
         this.loadCart();
@@ -89,7 +89,7 @@ export class CartService {
     }
  this.saveCart();
  console.log("dsddsds",this.cartItems)
-   // localStorage.setItem(this.cartKey, JSON.stringify(cart));
+
   }
 
    Removeitem(product: any) {
@@ -104,13 +104,13 @@ export class CartService {
       });
     }
  this.saveCart();
-   // localStorage.setItem(this.cartKey, JSON.stringify(cart));
+
   }
 
  
   removeFromCart(id: number) {
     this.cartItems= this.cartItems.filter(item => item.ProductID !== id);
-   // localStorage.setItem(this.cartKey, JSON.stringify(cart));
+
        this.saveCart();
   }
 
