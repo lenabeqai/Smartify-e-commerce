@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  private apiUrl = 'http://localhost:5000/api/categories'; // Node.js API URL
+  private apiUrl = 'https://phoneshop-e-commerce-1.onrender.com/api/categories'//'http://localhost:5000/api/categories'; // Node.js API URL
 
   constructor(private http:HttpClient) { }
 

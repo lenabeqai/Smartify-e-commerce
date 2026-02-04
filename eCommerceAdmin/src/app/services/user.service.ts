@@ -7,7 +7,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:5000/api/users'; // Node.js API URL
+  private apiUrl = 'https://phoneshop-e-commerce-1.onrender.com/api/users'//'http://localhost:5000/api/users'; // Node.js API URL
 
   constructor(private http: HttpClient) {}
 
